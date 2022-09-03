@@ -1,7 +1,9 @@
 import React, { useContext } from 'react'
+import LineDivider from '../LineDivider'
 
 import AppContext from '../../context/Context'
 import CartList from '../CartList';
+import FavoritesList from '../FavoritesList';
 
 type Props = {
   visible?: boolean;
@@ -9,11 +11,20 @@ type Props = {
 
 const Sidebar = ({ visible }: Props) => {
 
-  const { cart, favorites } = useContext<any>(AppContext);
+  const { cart, favorites, sidebar } = useContext<any>(AppContext);
 
   return (
     <div className={`${visible ? 'w-1/4' : 'w-0'} border-l-4 border-gray-300 transition-all duration-300`}>
-      <CartList />
+        <div className='p-4'>        
+          {
+            sidebar == 'cart' && 
+            <CartList />
+          }
+          {
+            sidebar == 'favorites' &&
+            <FavoritesList />
+          }
+        </div>
     </div>
   )
 }

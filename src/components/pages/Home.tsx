@@ -6,6 +6,9 @@ import Sidebar from '../layout/Sidebar';
 import AppContext from '../../context/Context';
 import MovieCard from '../MovieCard';
 
+import { movies } from '../../data/dummy';
+import { MovieProps } from '../types/movie';
+
 const Home = () => {
     
     const { setCart, setFavorites, sidebar, setSidebar } = useContext<any>(AppContext);
@@ -16,22 +19,23 @@ const Home = () => {
             
             <div className="flex h-full">
                 <div className='flex flex-wrap overflow-y-scroll justify-evenly h-full w-full py-8 px-24'>
-                    <MovieCard id={'1'} date='03 agosto 2022' name='A volta' rating={7} genre='drama' price={68} image='none' />
-                    <MovieCard id={'2'} date='03 agosto 2022' name='A volta' rating={7} genre='drama' price={68} image='none' />
-                    <MovieCard id={'3'} date='03 agosto 2022' name='A volta' rating={7} genre='drama' price={68} image='none' />
-                    <MovieCard id={'4'} date='03 agosto 2022' name='A volta' rating={7} genre='drama' price={68} image='none' />
-                    <MovieCard id={'5'} date='03 agosto 2022' name='A volta' rating={7} genre='drama' price={68} image='none' />
-                    <MovieCard id={'6'} date='03 agosto 2022' name='A volta' rating={7} genre='drama' price={68} image='none' />
-                    <MovieCard id={'7'} date='03 agosto 2022' name='A volta' rating={7} genre='drama' price={68} image='none' />
-                    <MovieCard id={'8'} date='03 agosto 2022' name='A volta' rating={7} genre='drama' price={68} image='none' />
-                    <MovieCard id={'9'} date='03 agosto 2022' name='A volta' rating={7} genre='drama' price={68} image='none' />
-                    
-                    
-                    
+                    {
+                        movies.map((movie: MovieProps) => (
+                            <MovieCard 
+                                id={movie.id}
+                                name={movie.name}
+                                genre={movie.date}
+                                price={movie.price}
+                                rating={movie.rating}
+                                image={movie.image}
+                                date={movie.date}
+                            />
+                        ))
+                    }
                 </div>
                 
                 
-                    <Sidebar visible={(sidebar.cart || sidebar.favorites)} />                        
+                <Sidebar visible={sidebar != ''} />                        
                 
             </div>
         </div>

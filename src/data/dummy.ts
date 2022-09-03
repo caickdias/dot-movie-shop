@@ -82,5 +82,26 @@ const movies: MovieProps[] = [
         genre: 'acao',
         image: 'imagem'
     },
+    {
+        id: '10',
+        name: 'Opa opa opa',
+        price: 8,
+        rating: 4,
+        date: '7 aug, 2022',
+        genre: 'comedia',
+        image: 'imagem'
+    },
+    {
+        id: '9',
+        name: 'Balaozao',
+        price: 18,
+        rating: 2,
+        date: '7 aug, 2022',
+        genre: 'acao',
+        image: 'imagem'
+    },
 ]
     
+export {
+    movies,
+}

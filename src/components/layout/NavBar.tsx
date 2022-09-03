@@ -11,9 +11,7 @@ const Navbar = () => {
   const { sidebar, setSidebar } = useContext<any>(AppContext);
 
   const handleToggleSidebar = (tabName: string) => {    
-    setSidebar({
-      [tabName]: !sidebar[tabName],
-    })
+    setSidebar(sidebar == tabName ? '' : tabName)
   }
 
   return (
