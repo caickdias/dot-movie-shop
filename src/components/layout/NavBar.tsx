@@ -1,10 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import SearchBar from '../inputs/SearchBar'
+
+import AppContext from '../../context/Context';
 
 import ShoppingCart from '../icons/ShoppingCart';
 import Favorite from '../icons/Favorite';
 
-const NavBar = () => {
+const Navbar = () => {
+
+  const { sidebar, setSidebar } = useContext<any>(AppContext);
+
+  const handleToggleSidebar = (tabName: string) => {    
+    setSidebar({
+      [tabName]: !sidebar[tabName],
+    })
+  }
+
   return (
     <div className="flex h-14 w-full p-6 px-14 justify-between items-center bg-[#8DD7CF]">
       <div>
@@ -14,13 +25,13 @@ const NavBar = () => {
       <SearchBar />
       
       <div className='flex'>
-        <Favorite />        
+        <Favorite onClick={handleToggleSidebar} />        
 
-        <ShoppingCart />
+        <ShoppingCart onClick={handleToggleSidebar} />
       </div>
 
     </div>
   )
 }
 
-export default NavBar
+export default Navbar

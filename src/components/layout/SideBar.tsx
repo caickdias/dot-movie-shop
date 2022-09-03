@@ -3,7 +3,7 @@ import LineDivider from '../LineDivider'
 
 import AppContext from '../../context/Context'
 
-const SideBar = () => {
+const Sidebar = () => {
 
   const { cart, favorites } = useContext<any>(AppContext);
 
@@ -14,10 +14,11 @@ const SideBar = () => {
 
           <a className='text-purple-500 underline' href="#">Esvaziar</a>
         </div>
-        <LineDivider />
+
+        <LineDivider />        
 
     </div>
   )
 }
 
-export default SideBar
+export default Sidebar

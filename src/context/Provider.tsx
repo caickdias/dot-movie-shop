@@ -9,9 +9,10 @@ type Props = {
 export const AppProvider = ({ children }: Props) => {
     const [cart, setCart] = useState([]);
     const [favorites, setFavorites] = useState([]);
+    const [sidebar, setSidebar] = useState({ cart: false, favorites: false})
 
     return(
-        <AppContext.Provider value={{cart, setCart, favorites, setFavorites}}>
+        <AppContext.Provider value={{cart, setCart, favorites, setFavorites, sidebar, setSidebar}}>
             {children}
         </AppContext.Provider>
     )

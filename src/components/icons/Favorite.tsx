@@ -2,10 +2,16 @@ import React from 'react'
 
 import { AiFillHeart } from 'react-icons/ai';
 
-const Favorite = () => {
+type Props = {  
+  onClick: (tabName: string) => void;
+  size?: number;
+  color?: string;
+}
+
+const Favorite = ({ onClick, size=30, color='white' }: Props) => {
   return (
-    <button>
-        <AiFillHeart className='ml-8 hover:scale-125 transition-all' color='white' size={30} />
+    <button onClick={() => onClick('favorites')}>
+        <AiFillHeart className='ml-8 hover:scale-125 transition-all' color={color} size={size} />
     </button>
   )
 }

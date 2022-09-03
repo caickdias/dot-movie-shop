@@ -1,22 +1,30 @@
-import React from 'react'
-import NavBar from '../layout/NavBar';
-import SideBar from '../layout/SideBar';
+import React, { useContext } from 'react'
+
+import Navbar from '../layout/Navbar';
+import Sidebar from '../layout/Sidebar';
+
+import AppContext from '../../context/Context';
+import MovieCard from '../MovieCard';
 
 const Home = () => {
-
-    const showNavbar = true;
+    
+    const { setCart, setFavorites, sidebar, setSidebar } = useContext<any>(AppContext);
 
     return (
         <div className="flex flex-col h-screen w-screen bg-gray-50">
-            <NavBar />
+            <Navbar />
             
             <div className="flex h-full">
-                <div className='h-full w-4/5'>
-
+                <div className='flex justify-between h-full w-full py-8 px-24'>
+                    <MovieCard />
+                    <MovieCard />
+                    <MovieCard />
+                    <MovieCard />
+                    
                 </div>
                 
-                { showNavbar &&
-                    <SideBar />
+                { (sidebar.cart || sidebar.favorites) &&                    
+                    <Sidebar />                        
                 }
             </div>
         </div>
