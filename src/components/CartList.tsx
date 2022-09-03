@@ -8,15 +8,17 @@ import CartItem from './CartItem';
 
 const CartList = () => {
 
-  const { cart } = useContext<any>(AppContext);
+  const { cart, setCart } = useContext<any>(AppContext);
   
+  const emptyCart = () => setCart([]);
+
   return (
-    <div className='p-2 h-fit'>
+    <div className='p-4 h-fit'>
       <div>
         <div className='flex items-center justify-between mb-4'>
         <h1 className='text-xl'>Meu Carrinho</h1>
 
-        <a className='text-purple-500 underline' href="#">Esvaziar</a>
+        <a className='text-purple-500 underline' href="#" onClick={emptyCart}>Esvaziar</a>
         </div>
 
         <LineDivider />        
