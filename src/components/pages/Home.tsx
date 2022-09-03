@@ -16,17 +16,17 @@ const Home = () => {
             
             <div className="flex h-full">
                 <div className='flex flex-wrap overflow-y-scroll justify-evenly h-full w-full py-8 px-24'>
-                    <MovieCard />
-                    <MovieCard />
-                    <MovieCard />                                                            
-                    <MovieCard />                                                            
-                    <MovieCard />                                                            
-                    <MovieCard />                                                            
-                    <MovieCard />                                                            
-                    <MovieCard />                                                            
-                    <MovieCard />                                                            
-                    <MovieCard />                                                            
-                    <MovieCard />                                                            
+                    <MovieCard date='03 agosto 2022' name='A volta' rating={7} genre='drama' price={68} image='none' />
+                    <MovieCard date='03 agosto 2022' name='A volta' rating={7} genre='drama' price={68} image='none' />
+                    <MovieCard date='03 agosto 2022' name='A volta' rating={7} genre='drama' price={68} image='none' />
+                    <MovieCard date='03 agosto 2022' name='A volta' rating={7} genre='drama' price={68} image='none' />
+                    <MovieCard date='03 agosto 2022' name='A volta' rating={7} genre='drama' price={68} image='none' />
+                    <MovieCard date='03 agosto 2022' name='A volta' rating={7} genre='drama' price={68} image='none' />
+                    <MovieCard date='03 agosto 2022' name='A volta' rating={7} genre='drama' price={68} image='none' />
+                    <MovieCard date='03 agosto 2022' name='A volta' rating={7} genre='drama' price={68} image='none' />
+                    <MovieCard date='03 agosto 2022' name='A volta' rating={7} genre='drama' price={68} image='none' />
+                    <MovieCard date='03 agosto 2022' name='A volta' rating={7} genre='drama' price={68} image='none' />
+                    
                 </div>
                 
                 
