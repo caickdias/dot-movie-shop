@@ -5,16 +5,9 @@ import { AiFillStar } from 'react-icons/ai';
 import { formatCurrency } from '../utils/format';
 import Favorite from './icons/Favorite';
 
-type Props = {
-  date: string;
-  name: string;
-  rating: number;
-  genre: string;
-  price: number;
-  image: string;
-}
+import { MovieProps } from './types/movie';
 
-const MovieCard = ({ date, name, rating, genre, price, image }: Props) => {
+const MovieCard = ({ date, name, rating, genre, price, image }: MovieProps) => {
   return (
     <div className='flex flex-col hover:scale-110 mx-8 mb-8 shadow-md shadow-gray-400 rounded-md bg-slate-100 min-w-[150px] h-80 w-52 transition-all'>
       
