@@ -15,7 +15,7 @@ const Sidebar = ({ visible }: Props) => {
 
   return (
     <div className={`${visible ? 'w-1/4' : 'w-0'} border-l-4 border-gray-300 transition-all duration-300`}>
-        <div className='p-4'>        
+        <div className=''>        
           {
             sidebar == 'cart' && 
             <CartList />
