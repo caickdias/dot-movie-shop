@@ -11,21 +11,27 @@ const Home = () => {
     const { setCart, setFavorites, sidebar, setSidebar } = useContext<any>(AppContext);
 
     return (
-        <div className="flex flex-col h-screen w-screen bg-gray-50">
+        <div className="flex flex-col h-screen w-screen bg-gray-50 overflow-clip">
             <Navbar />
             
             <div className="flex h-full">
-                <div className='flex justify-between h-full w-full py-8 px-24'>
+                <div className='flex flex-wrap overflow-y-scroll justify-evenly h-full w-full py-8 px-24'>
                     <MovieCard />
                     <MovieCard />
-                    <MovieCard />
-                    <MovieCard />
-                    
+                    <MovieCard />                                                            
+                    <MovieCard />                                                            
+                    <MovieCard />                                                            
+                    <MovieCard />                                                            
+                    <MovieCard />                                                            
+                    <MovieCard />                                                            
+                    <MovieCard />                                                            
+                    <MovieCard />                                                            
+                    <MovieCard />                                                            
                 </div>
                 
-                { (sidebar.cart || sidebar.favorites) &&                    
-                    <Sidebar />                        
-                }
+                
+                    <Sidebar visible={(sidebar.cart || sidebar.favorites)} />                        
+                
             </div>
         </div>
     )
