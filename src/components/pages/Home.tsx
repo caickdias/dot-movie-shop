@@ -11,7 +11,11 @@ import { MovieProps } from '../types/movie';
 
 const Home = () => {
     
-    const { setCart, setFavorites, sidebar, setSidebar } = useContext<any>(AppContext);
+    const { cart, setCart, setFavorites, sidebar, setSidebar } = useContext<any>(AppContext);
+
+    const handleAddToCart = (id: string) => {
+        setCart([...cart, id])
+    }
 
     return (
         <div className="flex flex-col h-screen w-screen bg-gray-50 overflow-clip">
@@ -29,6 +33,7 @@ const Home = () => {
                                 rating={movie.rating}
                                 image={movie.image}
                                 date={movie.date}
+                                onAddToCart={handleAddToCart}
                             />
                         ))
                     }

@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import LineDivider from './LineDivider';
 
+import AppContext from '../context/Context';
+import { MovieProps } from './types/movie';
+
+import { movies } from '../data/dummy';
+
+import CartItem from './CartItem';
+
 const CartList = () => {
+
+  const { cart } = useContext<any>(AppContext);
+  
   return (
     <div className='p-4'>
         <div className='flex items-center justify-between mb-4'>
@@ -11,6 +21,10 @@ const CartList = () => {
         </div>
 
         <LineDivider />        
+
+        {
+          cart.map((movieId: string) => <CartItem id={movieId} />)
+        }
     </div>
   )
 }

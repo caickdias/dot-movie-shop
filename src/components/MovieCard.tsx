@@ -3,11 +3,16 @@ import React from 'react'
 import { AiFillStar } from 'react-icons/ai';
 
 import { formatCurrency } from '../utils/format';
+import Button from './Button';
 import Favorite from './icons/Favorite';
 
 import { MovieProps } from './types/movie';
 
-const MovieCard = ({ date, name, rating, genre, price, image }: MovieProps) => {
+type Props = MovieProps & {
+  onAddToCart: (id: string) => void;
+}
+
+const MovieCard = ({id, date, name, rating, genre, price, image, onAddToCart }: Props) => {
   return (
     <div className='flex flex-col hover:scale-110 mx-8 mb-8 shadow-md shadow-gray-400 rounded-md bg-slate-100 min-w-[150px] h-80 w-52 transition-all'>
       
@@ -47,9 +52,7 @@ const MovieCard = ({ date, name, rating, genre, price, image }: MovieProps) => {
 
       </div>
 
-      <button className='flex flex-[1] bg-violet-600 rounded-b-md items-center justify-center'>
-        <p className='text-white font-bold'>Adicionar</p>
-      </button>
+      <Button title="Adicionar" onClick={() => onAddToCart(id)} />
     </div>
   )
 }

@@ -92,7 +92,7 @@ const movies: MovieProps[] = [
         image: 'imagem'
     },
     {
-        id: '9',
+        id: '11',
         name: 'Balaozao',
         price: 18,
         rating: 2,
