@@ -11,10 +11,14 @@ import { MovieProps } from '../types/movie';
 
 const Home = () => {
     
-    const { cart, setCart, setFavorites, sidebar, setSidebar } = useContext<any>(AppContext);
+    const { cart, setCart, favorites, setFavorites, sidebar } = useContext<any>(AppContext);
 
     const handleAddToCart = (id: string) => {
         setCart([...cart, id])
+    }
+
+    const handleAddToFavorites = (id: string) => {
+        setFavorites([...favorites, id])
     }
 
     return (
@@ -34,6 +38,7 @@ const Home = () => {
                                 image={movie.image}
                                 date={movie.date}
                                 onAddToCart={handleAddToCart}
+                                onAddToFavorites={handleAddToFavorites}
                             />
                         ))
                     }
