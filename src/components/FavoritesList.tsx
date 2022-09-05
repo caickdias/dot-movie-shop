@@ -12,7 +12,9 @@ const FavoritesList = () => {
   }
 
   const handleAddToCart = (id: number) => {
-    setCart([...cart, id]);
+    if(!cart.includes(id)){
+      setCart([...cart, id]);
+  }
   }
 
   const emptyCart = () => setFavorites([]);

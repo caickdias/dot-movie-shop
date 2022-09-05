@@ -11,7 +11,7 @@ const CartList = () => {
   const { cart, setCart } = useContext<any>(AppContext);
   
   const handleRemoveItem = (id: number) => {
-    setCart([...cart.filter((movieId: number) => movieId != id)]);
+    setCart(cart.filter((movieId: number) => movieId != id));
   }
 
   const emptyCart = () => setCart([]);

@@ -22,7 +22,9 @@ const Home = () => {
     }, [])
 
     const handleAddToCart = (id: string) => {
-        setCart([...cart, id])
+        if(!cart.includes(id)){
+            setCart([...cart, id]);
+        }
     }
 
     const handleAddToFavorites = (id: string) => {
