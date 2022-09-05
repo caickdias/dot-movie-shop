@@ -1,7 +1,6 @@
 import React from 'react'
 
-import { movies } from '../data/dummy';
-import { MovieProps } from './types/movie';
+import { MovieProps } from '../types/movie';
 import { formatCurrency } from '../utils/format';
 import Trash from './icons/Trash';
 
@@ -18,7 +17,6 @@ const CartItem = ({id }: Props) => {
         <div className='flex w-full my-2 items-center justify-between'>
             <div className="flex w-3/5 ">
                 <div className='h-10 w-10 bg-gray-400'>
-
                 </div>
 
                 <h1 className='text-base m-2'>{movie.name}</h1>

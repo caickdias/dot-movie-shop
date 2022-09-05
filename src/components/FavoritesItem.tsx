@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { movies } from '../data/dummy';
-import { MovieProps } from './types/movie';
+import { MovieProps } from '../types/movie';
 import { formatCurrency } from '../utils/format';
 import ShoppingCart from './icons/ShoppingCart';
 import Trash from './icons/Trash';
