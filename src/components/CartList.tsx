@@ -27,7 +27,7 @@ const CartList = () => {
       <div className='flex flex-col justify-between'>
         <div>
           {
-            cart.map((movieId: string) => <CartItem key={movieId} id={movieId} />)
+            cart.map((movieId: number) => <CartItem key={movieId} id={movieId} />)
           }
         </div>
 

@@ -24,13 +24,12 @@ const FavoritesItem = ({ id }: Props) => {
 
     return (
         <div className='flex w-full my-2 items-center justify-between'>
-            <div className='flex w-1/2 items-center'>
-                
-            <img 
-                className='object-fit rounded-md w-14' 
-                src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} 
-                alt='no image' 
-            />                
+            <div className='flex w-1/2 items-center'>                
+                <img 
+                    className='object-fit rounded-md w-14' 
+                    src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} 
+                    alt='no image' 
+                />                
 
                 <h1 className='text-base m-2'>{movie.title}</h1>
             </div>
