@@ -8,18 +8,30 @@ import { getMovieInfo } from '../services/api';
 
 type Props = {
     id: number;
+    onRemove: (id: number) => void;
 }
 
-const CartItem = ({id }: Props) => {
+const CartItem = ({id, onRemove }: Props) => {
     
     const [movie, setMovie] = useState({} as MovieProps);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         getMovieInfo(id)
         .then((res) => {
-            setMovie(res)
+            setMovie(res);            
         })
     })
+
+    useEffect(() => {
+        setLoading(false);
+    }, [movie])
+
+    if(loading){
+        return(
+            <h1>Loading</h1>
+        )
+    }
 
     return (
         <div className='flex w-full my-2 items-center justify-between'>
@@ -34,9 +46,9 @@ const CartItem = ({id }: Props) => {
             </div>
             
             <div className="flex w-2/5 justify-around">
-                <h1 className='text-base m-2'>{formatCurrency(movie.vote_average * 10)}</h1>
+                <h1 className='text-base m-2'>{formatCurrency(movie.vote_average * 10 || 0)}</h1>
                             
-                <Trash size={20} color='darkGray' onClick={() => {}} />            
+                <Trash size={20} color='darkGray' onClick={() => onRemove(id)} />            
             </div>
             
         </div>

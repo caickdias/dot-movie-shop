@@ -10,6 +10,10 @@ const CartList = () => {
 
   const { cart, setCart } = useContext<any>(AppContext);
   
+  const handleRemoveItem = (id: number) => {
+    setCart([...cart.filter((movieId: number) => movieId != id)]);
+  }
+
   const emptyCart = () => setCart([]);
 
   return (
@@ -27,7 +31,13 @@ const CartList = () => {
       <div className='flex flex-col justify-between'>
         <div>
           {
-            cart.map((movieId: number) => <CartItem key={movieId} id={movieId} />)
+            cart.map((movieId: number) => (
+              <CartItem 
+                key={movieId} 
+                id={movieId} 
+                onRemove={handleRemoveItem}
+              />
+            ))
           }
         </div>
 

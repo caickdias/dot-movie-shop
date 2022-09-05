@@ -14,6 +14,7 @@ type Props = {
 const FavoritesItem = ({ id }: Props) => {
     
     const [movie, setMovie] = useState({} as MovieProps);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         getMovieInfo(id)
@@ -21,7 +22,17 @@ const FavoritesItem = ({ id }: Props) => {
             setMovie(res)
         })
     })
+    
+    useEffect(() => {
+        setLoading(false);
+    }, [movie])
 
+    if(loading){
+        return(
+            <h1>Loading</h1>
+        )
+    }
+    
     return (
         <div className='flex w-full my-2 items-center justify-between'>
             <div className='flex w-1/2 items-center'>                
@@ -35,7 +46,7 @@ const FavoritesItem = ({ id }: Props) => {
             </div>
 
             <div className='flex w-1/2 justify-around'>
-                <h1 className='text-base m-2'>{formatCurrency(movie.vote_average * 10)}</h1>
+                <h1 className='text-base m-2'>{formatCurrency(movie.vote_average * 10 || 0)}</h1>
                             
                 <ShoppingCart size={20} color='green' onClick={() => {}} />            
                 <Trash size={20} color='darkGray' onClick={() => {}} />            
