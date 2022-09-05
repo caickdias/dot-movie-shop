@@ -35,11 +35,8 @@ const MovieCard = ({id, release_date, title, vote_average, genre, price, poster_
         </div>
         
         <div className='absolute w-full bottom-2 text-center'>
-          <h1 className='text-white'>
-            {release_date}
-          </h1>
+          
         </div>
-
 
       </div>
 

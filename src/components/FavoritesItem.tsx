@@ -9,9 +9,11 @@ import { getMovieInfo } from '../services/api';
 
 type Props = {
     id: number;
+    onRemove: (id: number) => void;
+    onAddToCart: (id: number) => void;
 }
 
-const FavoritesItem = ({ id }: Props) => {
+const FavoritesItem = ({ id, onRemove, onAddToCart }: Props) => {
     
     const [movie, setMovie] = useState({} as MovieProps);
     const [loading, setLoading] = useState(true);
@@ -48,8 +50,8 @@ const FavoritesItem = ({ id }: Props) => {
             <div className='flex w-1/2 justify-around'>
                 <h1 className='text-base m-2'>{formatCurrency(movie.vote_average * 10 || 0)}</h1>
                             
-                <ShoppingCart size={20} color='green' onClick={() => {}} />            
-                <Trash size={20} color='darkGray' onClick={() => {}} />            
+                <ShoppingCart size={20} color='green' onClick={() => onAddToCart(id)} />            
+                <Trash size={20} color='darkGray' onClick={() => onRemove(id)} />            
             </div>
             
         </div>

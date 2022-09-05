@@ -5,8 +5,16 @@ import FavoritesItem from './FavoritesItem';
 import LineDivider from './LineDivider'
 
 const FavoritesList = () => {
-  const { favorites, setFavorites } = useContext<any>(AppContext);
+  const { favorites, setFavorites, cart, setCart } = useContext<any>(AppContext);
   
+  const handleRemoveItem = (id: number) => {
+    setFavorites([...favorites.filter((movieId:number) => movieId != id)]);
+  }
+
+  const handleAddToCart = (id: number) => {
+    setCart([...cart, id]);
+  }
+
   const emptyCart = () => setFavorites([]);
 
   return (
@@ -24,7 +32,14 @@ const FavoritesList = () => {
       <div className='flex flex-col justify-between'>
         <div>
           {
-            favorites.map((movieId: number) => <FavoritesItem key={movieId} id={movieId} />)
+            favorites.map((movieId: number) => (
+              <FavoritesItem 
+                key={movieId} 
+                id={movieId} 
+                onRemove={handleRemoveItem}
+                onAddToCart={handleAddToCart}
+              />
+            ))
           }
         </div>
 
