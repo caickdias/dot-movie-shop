@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useContext} from 'react'
+
+import AppContext from '../context/Context';
 
 import { AiFillStar } from 'react-icons/ai';
 
@@ -15,6 +17,7 @@ type Props = MovieProps & {
 
 const MovieCard = ({id, date, name, rating, genre, price, image, onAddToCart, onAddToFavorites }: Props) => {
  
+  const { favorites } = useContext<any>(AppContext);
 
   return (
     <div className='flex flex-col hover:scale-110 mx-8 mb-8 shadow-md shadow-gray-400 rounded-md bg-slate-100 min-w-[150px] h-80 w-52 transition-all'>
@@ -22,7 +25,11 @@ const MovieCard = ({id, date, name, rating, genre, price, image, onAddToCart, on
       <div className='flex flex-[5] relative bg-slate-300 rounded-t-md'>
         
         <div className='absolute right-4 top-4'>
-          <Favorite size={24} color='darkBlue' onClick={() => onAddToFavorites(id)} />          
+          <Favorite 
+            size={24} 
+            color={`${favorites.includes(id) ? 'darkBlue' : 'white'}`} 
+            onClick={() => onAddToFavorites(id)} 
+          />            
         </div>
         
         <div className='absolute w-full bottom-2 text-center'>

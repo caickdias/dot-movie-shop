@@ -18,7 +18,7 @@ const Home = () => {
     }
 
     const handleAddToFavorites = (id: string) => {
-        setFavorites([...favorites, id])
+        setFavorites(favorites.includes(id) ? [...favorites.filter((movieId: string) => movieId != id)] : [...favorites, id])
     }
 
     return (
