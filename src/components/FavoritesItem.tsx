@@ -15,16 +15,20 @@ const FavoritesItem = ({ id='1' }) => {
 
     return (
         <div className='flex w-full my-2 items-center justify-between'>
-            <div className='h-10 w-10 bg-gray-400'>
+            <div className='flex w-1/2'>
+                <div className='h-10 w-10 bg-gray-400'>
 
+                </div>
+
+                <h1 className='text-base m-2'>{movie.name}</h1>
             </div>
 
-            <h1 className='text-base m-2'>{movie.name}</h1>
-            
-            <h1 className='text-base m-2'>{formatCurrency(movie.price)}</h1>
-                        
-            <ShoppingCart size={20} color='darkGray' onClick={() => {}} />            
-            <Trash size={20} color='darkGray' onClick={() => {}} />            
+            <div className='flex w-1/2 justify-around'>
+                <h1 className='text-base m-2'>{formatCurrency(movie.price)}</h1>
+                            
+                <ShoppingCart size={20} color='green' onClick={() => {}} />            
+                <Trash size={20} color='darkGray' onClick={() => {}} />            
+            </div>
             
         </div>
     )
