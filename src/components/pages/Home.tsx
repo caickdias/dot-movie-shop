@@ -26,7 +26,7 @@ const Home = () => {
             <Navbar />
             
             <div className="flex h-full">
-                <div className='flex flex-wrap overflow-y-scroll justify-evenly h-full w-full py-8 px-24'>
+                <div className='flex flex-wrap overflow-y-scroll justify-evenly h-full w-full py-8 px-20'>
                     {
                         movies.map((movie: MovieProps) => (
                             <MovieCard 

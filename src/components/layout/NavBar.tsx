@@ -16,16 +16,18 @@ const Navbar = () => {
 
   return (
     <div className="flex h-14 w-full p-6 px-14 justify-between items-center bg-[#8DD7CF]">
-      <div>
+      <div className='w-1/4'>
         <h1 className='text-white font-bold text-4xl'>LOGO</h1>
       </div>
 
       <SearchBar />
       
-      <div className='flex'>
-        <Favorite onClick={handleToggleSidebar} />        
+      <div className='flex flex-row-reverse w-1/4'>
+        <div className="flex justify-between w-1/4">
+          <Favorite onClick={handleToggleSidebar} />        
 
-        <ShoppingCart onClick={handleToggleSidebar} />
+          <ShoppingCart onClick={handleToggleSidebar} />
+        </div>
       </div>
 
     </div>

@@ -3,15 +3,14 @@ import React from 'react'
 import { movies } from '../data/dummy';
 import { MovieProps } from './types/movie';
 import { formatCurrency } from '../utils/format';
+import ShoppingCart from './icons/ShoppingCart';
 import Trash from './icons/Trash';
 
 type Props = {
-    id: string;
+    id?: string;
 }
 
-
-const CartItem = ({id }: Props) => {
-
+const FavoritesItem = ({ id='1' }) => {
     const movie: MovieProps | any = movies.find((movie: MovieProps) => movie.id == id)
 
     return (
@@ -24,10 +23,11 @@ const CartItem = ({id }: Props) => {
             
             <h1 className='text-base m-2'>{formatCurrency(movie.price)}</h1>
                         
+            <ShoppingCart size={20} color='darkGray' onClick={() => {}} />            
             <Trash size={20} color='darkGray' onClick={() => {}} />            
             
         </div>
     )
 }
 
-export default CartItem
+export default FavoritesItem

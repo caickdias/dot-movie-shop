@@ -11,7 +11,7 @@ type Props = {
 const Favorite = ({ onClick, size=30, color='white' }: Props) => {
   return (
     <button onClick={() => onClick('favorites')}>
-        <AiFillHeart className='ml-8 hover:scale-125 transition-all' color={color} size={size} />
+        <AiFillHeart className='hover:scale-125 transition-all' color={color} size={size} />
     </button>
   )
 }

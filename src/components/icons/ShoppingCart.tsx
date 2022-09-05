@@ -12,7 +12,7 @@ const ShoppingCart = ({ onClick, size=30, color='white' }: Props) => {
 
   return (
     <button onClick={() => onClick('cart')}>
-        <FaShoppingCart className='ml-8 hover:scale-125 transition-all' color={color} size={size} />
+        <FaShoppingCart className='hover:scale-125 transition-all' color={color} size={size} />
     </button>
   )
 }
