@@ -26,7 +26,7 @@ const Navbar = () => {
         <div className="flex justify-between w-1/4">
           <Favorite onClick={handleToggleSidebar} />        
 
-          <ShoppingCart onClick={handleToggleSidebar} />
+          <ShoppingCart onClick={handleToggleSidebar} showItemsAmout />
         </div>
       </div>
 
