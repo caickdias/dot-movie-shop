@@ -1,8 +1,16 @@
-const baseURL = "https://api.themoviedb.org/3";
+const BASE_URL = "https://api.themoviedb.org/3";
 
 const getTrending = async () => {
-    let req = await fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=${process.env.REACT_APP_API_KEY}&page=1`);
+    let req = await fetch(`${BASE_URL}/trending/movie/week?api_key=${process.env.REACT_APP_API_KEY}&page=1`);
     return await req.json();
 }
 
-export default api;
+const getMovieInfo = async (id) => {    
+    let req = await fetch(`${BASE_URL}/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}`);
+    return await req.json();
+}
+
+export {
+    getTrending,
+    getMovieInfo,
+};

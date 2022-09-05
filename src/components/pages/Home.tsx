@@ -7,7 +7,7 @@ import AppContext from '../../context/Context';
 import MovieCard from '../MovieCard';
 
 import { MovieProps } from '../../types/movie';
-import api from '../../services/api';
+import { getTrending } from '../../services/api';
 
 const Home = () => {
     
@@ -15,8 +15,8 @@ const Home = () => {
     const [movies, setMovies] = useState<MovieProps[]>([]);
 
     useEffect(() => {
-        api()
-        .then((res) => {
+        getTrending()
+        .then((res: any) => {
             setMovies([...res.results])
         })
     }, [])

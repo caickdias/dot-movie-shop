@@ -24,7 +24,7 @@ const FavoritesList = () => {
       <div className='flex flex-col justify-between'>
         <div>
           {
-            favorites.map((movieId: string) => <FavoritesItem id={movieId} />)
+            favorites.map((movieId: number) => <FavoritesItem key={movieId} id={movieId} />)
           }
         </div>
 
