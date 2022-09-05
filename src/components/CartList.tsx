@@ -5,6 +5,7 @@ import AppContext from '../context/Context';
 
 import Button from './Button';
 import CartItem from './CartItem';
+import { formatCurrency } from '../utils/format';
 
 const CartList = () => {
 
@@ -17,7 +18,7 @@ const CartList = () => {
   const emptyCart = () => setCart([]);
 
   return (
-    <div className='p-4 h-fit'>
+    <div className='p-4 min-h-screen max-h-screen'>
       <div>
         <div className='flex items-center justify-between mb-4'>
         <h1 className='text-xl'>Meu Carrinho</h1>
@@ -41,10 +42,10 @@ const CartList = () => {
           }
         </div>
 
-        <div className='flex flex-col w-full'>
+        <div className='flex flex-col'>
           <div className='flex items-center justify-between'>
             <h1>Total</h1>
-            <h1 className='font-bold'>R$ 91,99</h1>
+            <h1 className='font-bold'>{formatCurrency(0)}</h1>
           </div>
           
           <div className='flex h-10 rounded-full mt-4'>

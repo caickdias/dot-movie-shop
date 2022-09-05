@@ -26,6 +26,14 @@ npm install
 
 ## Usage
 
+Once you get your [private API for TMDB](https://www.themoviedb.org/documentation/api), create a `.env` file in the root of your project and add the following line
+
+```
+REACT_APP_API_KEY='YOUR API KEY'
+```
+
+Then, just run:
+
 ```
 npm start
 ```
