@@ -1,4 +1,4 @@
-import React, { useContext} from 'react'
+import React, { useContext } from 'react'
 
 import AppContext from '../context/Context';
 
@@ -52,7 +52,7 @@ const MovieCard = ({id, release_date, title, vote_average, genre, price, poster_
             </h1>
           </div>
 
-          {genre}
+          
         </div>
 
         <h1>

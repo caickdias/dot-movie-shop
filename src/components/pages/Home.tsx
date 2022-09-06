@@ -44,7 +44,7 @@ const Home = () => {
                                 key={movie.id}
                                 id={movie.id}
                                 title={movie.title}
-                                genre='opa'
+                                genre='aopa'
                                 price={movie.vote_average * 10}
                                 vote_average={movie.vote_average}
                                 poster_path={movie.poster_path}
