@@ -5,7 +5,7 @@ import AppContext from '../context/Context';
 
 import Button from './Button';
 import CartItem from './CartItem';
-import { formatCurrency } from '../utils/format';
+import { formatCurrency } from '../utils/formatText';
 
 const CartList = () => {
 

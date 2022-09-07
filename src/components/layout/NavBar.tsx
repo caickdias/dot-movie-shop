@@ -6,7 +6,11 @@ import AppContext from '../../context/Context';
 import ShoppingCart from '../icons/ShoppingCart';
 import Favorite from '../icons/Favorite';
 
-const Navbar = () => {
+type Props = {
+  onSearch: (words: string) => void;
+}
+
+const Navbar = ({ onSearch }: Props) => {
 
   const { sidebar, setSidebar } = useContext<any>(AppContext);
 
@@ -20,7 +24,9 @@ const Navbar = () => {
         <h1 className='text-white font-bold text-4xl'>LOGO</h1>
       </div>
 
-      <SearchBar />
+      <SearchBar 
+        onChangeInput={onSearch}
+      />
       
       <div className='flex flex-row-reverse w-1/4'>
         <div className="flex justify-between w-1/4">

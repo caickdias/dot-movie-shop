@@ -4,7 +4,7 @@ import AppContext from '../context/Context';
 
 import { AiFillStar } from 'react-icons/ai';
 
-import { formatCurrency } from '../utils/format';
+import { formatCurrency } from '../utils/formatText';
 import Button from './Button';
 import Favorite from './icons/Favorite';
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import { MovieProps } from '../types/movie';
-import { formatCurrency } from '../utils/format';
+import { formatCurrency } from '../utils/formatText';
 import ShoppingCart from './icons/ShoppingCart';
 import Trash from './icons/Trash';
 
