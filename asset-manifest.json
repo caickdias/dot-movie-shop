@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/dot-movie-shop/static/css/main.32a326f0.css",
-    "main.js": "/dot-movie-shop/static/js/main.d5aa016b.js",
+    "main.js": "/dot-movie-shop/static/js/main.69cb21bc.js",
     "index.html": "/dot-movie-shop/index.html",
     "main.32a326f0.css.map": "/dot-movie-shop/static/css/main.32a326f0.css.map",
-    "main.d5aa016b.js.map": "/dot-movie-shop/static/js/main.d5aa016b.js.map"
+    "main.69cb21bc.js.map": "/dot-movie-shop/static/js/main.69cb21bc.js.map"
   },
   "entrypoints": [
     "static/css/main.32a326f0.css",
-    "static/js/main.d5aa016b.js"
+    "static/js/main.69cb21bc.js"
   ]
 }
